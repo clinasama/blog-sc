@@ -2,10 +2,10 @@
 import type { SiteConfig } from '@/types';
 
 export const siteConfig: SiteConfig = {
-  title: 'mosaic',
+  title: 'Clina 的记事本',
   domain: 'https://clina.top',
   author: 'clina',
-  email: 'hi@clina.top',
+  email: 'clina@disroot.org',
   github: 'https://github.com/clinasama',
   themeColor: {
     hue: 300,
