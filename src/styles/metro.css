@@ -1,0 +1,263 @@
+/* SPDX-License-Identifier: MPL-2.0 */
+
+:root {
+  --hue: 300;
+  --gap: 8px;
+}
+
+html[data-mode="dark"],
+html:not([data-mode]) {
+  --bg-deep: oklch(0.14 0.03 var(--hue));
+  --bg-mid:  oklch(0.22 0.05 var(--hue));
+  --primary:        oklch(0.65 0.22 var(--hue));
+  --primary-soft:   oklch(0.55 0.18 var(--hue));
+  --primary-deep:   oklch(0.45 0.15 var(--hue));
+  --primary-darker: oklch(0.35 0.12 var(--hue));
+  --primary-light:  oklch(0.75 0.18 var(--hue));
+  --violet:   var(--primary);
+  --violet-2: var(--primary-soft);
+  --violet-3: var(--primary-deep);
+  --violet-4: var(--primary-darker);
+  --violet-5: var(--primary-light);
+  --text: #ffffff;
+  --text-muted: rgba(255, 255, 255, 0.6);
+  --surface: rgba(255, 255, 255, 0.08);
+  --surface-hover: rgba(255, 255, 255, 0.18);
+  --border-subtle: rgba(255, 255, 255, 0.1);
+}
+
+html[data-mode="light"] {
+  --bg-deep: oklch(0.93 0.02 var(--hue));
+  --bg-mid:  oklch(0.99 0.01 var(--hue));
+  --primary:        oklch(0.50 0.18 var(--hue));
+  --primary-soft:   oklch(0.60 0.15 var(--hue));
+  --primary-deep:   oklch(0.40 0.14 var(--hue));
+  --primary-darker: oklch(0.30 0.10 var(--hue));
+  --primary-light:  oklch(0.68 0.16 var(--hue));
+  --violet:   var(--primary);
+  --violet-2: var(--primary-soft);
+  --violet-3: var(--primary-deep);
+  --violet-4: var(--primary-darker);
+  --violet-5: var(--primary-light);
+  --text: #1a1a1a;
+  --text-muted: rgba(0, 0, 0, 0.55);
+  --surface: rgba(0, 0, 0, 0.06);
+  --surface-hover: rgba(0, 0, 0, 0.12);
+  --border-subtle: rgba(0, 0, 0, 0.1);
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; min-height: 100%; }
+body {
+  background: radial-gradient(circle at 50% 35%, var(--bg-mid) 0%, var(--bg-deep) 70%);
+  background-attachment: fixed;
+  color: var(--text);
+  font-family:
+    'Noto Sans Variable',
+    'Noto Sans SC Variable',
+    'Segoe UI',
+    system-ui,
+    sans-serif;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+code, kbd, samp, pre {
+  font-family:
+    'JetBrains Mono Variable',
+    'Fira Code',
+    ui-monospace,
+    monospace;
+}
+
+.tile-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 150px);
+  grid-auto-rows: 150px;
+  gap: var(--gap);
+  padding: 48px;
+  justify-content: center;
+  max-width: 1036px;
+  margin: 0 auto;
+}
+.tile-wide  { grid-column: span 2; }
+.tile-large { grid-column: span 2; grid-row: span 2; }
+
+.screen-head { padding: 0 48px 28px; max-width: 1036px; margin: 0 auto; }
+.screen-head h1 { margin: 0; font-size: 2.4rem; font-weight: 200; }
+.screen-head p  { margin: 4px 0 0; opacity: .6; letter-spacing: .3em; font-size: .8rem; }
+
+@media (max-width: 700px) {
+  .tile-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: auto;
+    padding: 20px;
+  }
+  .tile-grid .tile { aspect-ratio: 1; }
+  .tile-grid .tile-wide  { grid-column: span 2; aspect-ratio: 2 / 1; }
+  .tile-grid .tile-large { grid-column: span 2; grid-row: span 1; aspect-ratio: 2 / 1; }
+  .screen-head { padding: 0 20px 20px; }
+}
+
+html[data-mode="light"] img[data-invert-on-light] {
+  filter: invert(1) hue-rotate(180deg);
+}
+/* ── Back button (moved from BackButton.astro) ── */
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1.5px solid var(--text);
+  background: transparent;
+  color: var(--text);
+  text-decoration: none;
+  box-sizing: border-box;
+  transition:
+    background 0.15s ease,
+    transform 0.1s ease,
+    border-color 0.15s ease,
+    color 0.15s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.back-btn svg {
+  width: 26px;
+  height: 26px;
+  display: block;
+}
+
+.back-btn:hover {
+  background: color-mix(in oklch, var(--text) 12%, transparent);
+}
+
+.back-btn:active {
+  transform: scale(0.9);
+  background: color-mix(in oklch, var(--text) 22%, transparent);
+}
+
+.back-btn:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+/* ── Image styles ── */
+
+.image-grid {
+  display: grid;
+  gap: 8px;
+  margin: 24px 0;
+}
+.image-grid.cols-1 { grid-template-columns: 1fr; }
+.image-grid.cols-2 { grid-template-columns: repeat(2, 1fr); }
+.image-grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
+.image-grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
+.image-grid img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+@media (max-width: 700px) {
+  .image-grid.cols-3,
+  .image-grid.cols-4 { grid-template-columns: repeat(2, 1fr); }
+}
+/* ── Markdown 图片（包裹在 a.img-lightbox 内）── */
+article a.img-lightbox,
+.custom-md a.img-lightbox {
+  display: block;
+  margin: 20px 0;
+  line-height: 0;
+  text-decoration: none;
+}
+article a.img-lightbox img,
+.custom-md a.img-lightbox img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  margin: 0;
+  cursor: zoom-in;
+}
+/* 强制正文图片响应式缩放 */
+article img,
+.custom-md img {
+  max-width: 100% !important;
+  height: auto !important;
+  display: block;
+}
+article a.img-lightbox,
+.custom-md a.img-lightbox {
+  display: block;
+  max-width: 100%;
+  line-height: 0;
+  margin: 16px 0;
+}
+/* ── Repo Card (GitHub / Codeberg) ── */
+.repo-card {
+  display: block;
+  margin: 20px 0;
+  padding: 16px 18px;
+  background: var(--surface);
+  border: 1px solid var(--border-subtle);
+  text-decoration: none;
+  color: var(--text);
+  transition: border-color 0.15s, background 0.15s;
+}
+.repo-card:hover {
+  border-color: var(--primary);
+  background: color-mix(in oklch, var(--primary) 8%, var(--surface));
+}
+.repo-card-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+.repo-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.repo-meta {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.repo-name {
+  font-weight: 400;
+  font-size: 0.95rem;
+}
+.repo-platform {
+  font-size: 0.7rem;
+  padding: 1px 6px;
+  border: 1px solid var(--border-subtle);
+  color: var(--text-muted);
+}
+.repo-desc {
+  margin: 0 0 10px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+.repo-stats {
+  display: flex;
+  gap: 14px;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+.repo-lang {
+  padding: 1px 8px;
+  background: var(--primary);
+  color: #fff;
+  font-size: 0.7rem;
+}
+.repo-card-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
