@@ -1,1 +1,1 @@
-你好，这里是 About 页面。
+你好呀！我是 ClinaSaMa，一位住在中华人民共和国的初中生。我热衷于开源项目贡献，是 komari-document、tauri-docs 的贡献者之一。感谢您光临我的博客！
