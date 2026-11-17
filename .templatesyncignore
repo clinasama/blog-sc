@@ -1,3 +1,4 @@
 src/content/posts/
 src/content/spec/
-src/config/
+src/config/siteConfig.ts
+src/config/tileConfig.ts
