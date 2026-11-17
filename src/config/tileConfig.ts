@@ -7,6 +7,6 @@ export const tileConfig: TileConfig[] = [
   { label: 'RSS',    icon: 'fa7-solid:rss',      href: '/rss.xml', size: 'medium', color: 'var(--violet-4)' },
   { label: 'Mail',   icon: 'fa7-solid:envelope', href: 'mailto:clina@disroot.org', size: 'medium', color: 'var(--violet-5)' },
   { label: 'About', icon: 'fa7-solid:user', href: '/about/', size: 'medium', color: 'var(--violet-2)' },
-  { label: '开往', icon: 'fa7-solid:train-subway', href: 'https://www.travellings.cn/go.html', size: 'medium', color: 'var(--violet-1)'},
+  { label: '开往', icon: 'fa7-solid:train-subway', href: 'https://www.travellings.cn/go.html', size: 'medium', color: 'var(--violet-4)'},
   { label: 'Friends', icon: 'fa7-solid:users', href: '/friends/', size: 'wide', color: 'var(--violet-3)' },
 ];

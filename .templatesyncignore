@@ -1,6 +1,3 @@
-# 不同步个人内容与配置
 src/content/posts/
 src/content/spec/
-src/config/siteConfig.ts
-src/config/tileConfig.ts
-src/styles/metro.css
+src/config/
