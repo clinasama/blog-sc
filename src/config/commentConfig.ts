@@ -33,7 +33,7 @@ export const commentConfig: CommentConfig = {
     repoId: 'R_kgDOQGZinw',
     category: 'General',
     categoryId: 'DIC_kwDOQGZin84Cw5RD',
-    mapping: 'title',
+    mapping: 'slug',
     reactionsEnabled: '1',
     inputPosition: 'top',
     lang: 'zh-CN',
