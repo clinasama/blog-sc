@@ -13,10 +13,28 @@ import { remarkRepoCard } from './src/plugins/remark-repo-card.js';
 import { rehypeImageLightbox } from './src/plugins/rehype-image-lightbox.mjs';
 
 export default defineConfig({
-  site: 'https://mosaic-example.netlify.app',
+  site: 'https://clina.top',
   image: {
     service: { entrypoint: 'astro/assets/services/noop' },
   },
+	redirects: {
+		"/codeberg": {
+			status: 302,
+			destination: "https://codeberg.org/clina",
+		},
+		"/github": {
+			status: 302,
+			destination: "https://github.com/clinasama",
+		},
+		"/xmpp": {
+			status: 302,
+			destination: "https://xmpp.link/#clina@yax.im",
+		},
+		"/matrix": {
+			status: 302,
+			destination: "https://matrix.to/#/@clina:pub.solar",
+		},
+	},
   integrations: [
     expressiveCode({
       themes: ['one-dark-pro', 'one-light'],
