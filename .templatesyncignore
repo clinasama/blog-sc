@@ -1,8 +1,8 @@
+astro.config.mjs
 src/content/posts/
 src/content/spec/
 src/config/siteConfig.ts
 src/config/tileConfig.ts
 src/config/commentConfig.ts
 src/config/friendsConfig.ts
-astro.config.mjs
-layouts/MetroLayout.astro
+src/layouts/MetroLayout.astro
