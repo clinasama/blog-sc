@@ -25,15 +25,15 @@ export interface CommentConfig {
 }
 
 export const commentConfig: CommentConfig = {
-  enabled: false,
+  enabled: true,
   provider: 'giscus',
   giscus: {
     // 在 https://giscus.app 配置你的仓库后获取以下值
-    repo: 'yourusername/your-repo',
-    repoId: 'R_kgDOxxxxxxx',
-    category: 'Announcements',
-    categoryId: 'DIC_kwDOxxxxxxx',
-    mapping: 'pathname',
+    repo: 'clinasama/giscus-comments',
+    repoId: 'R_kgDOQGZinw',
+    category: 'General',
+    categoryId: 'DIC_kwDOQGZin84Cw5RD',
+    mapping: 'title',
     reactionsEnabled: '1',
     inputPosition: 'top',
     lang: 'zh-CN',

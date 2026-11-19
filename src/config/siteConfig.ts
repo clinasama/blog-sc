@@ -2,7 +2,7 @@
 import type { SiteConfig } from '@/types';
 
 export const siteConfig: SiteConfig = {
-  title: 'Clina 的记事本',
+  title: 'Clina 的笔记本',
   domain: 'https://clina.top',
   author: 'clina',
   email: 'clina@disroot.org',
