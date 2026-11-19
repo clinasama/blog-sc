@@ -12,8 +12,8 @@ import '@/styles/metro.css';
 
 interface Props { title?: string; description?: string }
 const {
-  title = 'Clina 的笔记本',
-  description = 'ClinaSaMa 的个人站点，使用 Mosaic 主题。',
+  title = 'mosaic site',
+  description = 'mosaic site，以 Windows 8 开始屏幕为界面，磁贴式导航。',
 } = Astro.props;
 
 const defaultHue = siteConfig.themeColor.hue;
@@ -27,9 +27,6 @@ const themeFixed = siteConfig.themeColor.fixed;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <link rel="icon" href="/favicon.ico" sizes="any" />
-    <link rel="shortcut icon" href="/favicon.ico" />
-    <script defer src="https://cloud.umami.is/script.js" data-website-id="b0aad9b4-7587-4b16-a7f5-14999733afad"></script>
     <script is:inline set:html={`
       (() => {
         try {
