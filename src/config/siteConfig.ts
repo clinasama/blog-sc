@@ -11,4 +11,10 @@ export const siteConfig: SiteConfig = {
     hue: 300,
     fixed: false,
   },
+  
+  license: {
+    enabled: true,
+    defaultName: 'CC BY-NC-SA 4.0',
+    defaultUrl: 'https://creativecommons.org/licenses/by-nc-sa/4.0/',
+  },
 };
