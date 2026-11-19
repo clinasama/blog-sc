@@ -12,8 +12,8 @@ import '@/styles/metro.css';
 
 interface Props { title?: string; description?: string }
 const {
-  title = 'Clina 的笔记本',
-  description = 'ClinaSaMa 的个人站点，使用 Mosaic 主题。',
+  title = 'mosaic site',
+  description = 'mosaic site，以 Windows 8 开始屏幕为界面，磁贴式导航。',
 } = Astro.props;
 
 const defaultHue = siteConfig.themeColor.hue;
@@ -27,7 +27,6 @@ const themeFixed = siteConfig.themeColor.fixed;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <script defer src="https://umami.clina.top/script.js" data-website-id="d54b40aa-5f52-47fb-8855-b925a52f0a07"></script>
     <script is:inline set:html={`
       (() => {
         try {
